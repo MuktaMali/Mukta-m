@@ -1,0 +1,481 @@
+/* GENERAL */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 2;
+  padding: 2;
+  padding-right: 20%;
+  overflow-x: hidden;
+  background-color: #f4f7f9; /* or your preferred color */
+}
+
+section {
+  width: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+p {
+  color: #555;
+}
+
+/* TRANSITION */
+a,
+.btn {
+  transition: all 0.3s ease;
+}
+
+/* NAVIGATION */
+nav,
+.nav-links {
+  display: flex;
+  width: 100%;
+}
+
+nav {
+  justify-content: space-around;
+  align-items: center;
+  height: 17vh;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.nav-links {
+  gap: 2rem;
+width: 100%;
+  list-style: none;
+  font-size: 1.2rem;
+}
+
+a {
+  color: #222;
+  text-decoration: none;
+  position: relative;
+}
+
+a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background: #444;
+  left: 0;
+  bottom: -5px;
+  transition: width 0.3s ease;
+}
+
+a:hover::after {
+  width: 100%;
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #000;
+}
+
+.logo:hover {
+  color: #0078ff;
+  cursor: default;
+}
+
+/* HAMBURGER MENU */
+#hamburger-nav {
+  display: none;
+}
+
+.hamburger-menu {
+  position: relative;
+  display: inline-block;
+}
+
+.hamburger-icon span {
+  width: 100%;
+  height: 3px;
+  background-color: #000;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.menu-links {
+  background-color: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* SECTIONS */
+section {
+  padding-top: 4vh;
+  height: 96vh;
+  margin: 0 10rem;
+  box-sizing: border-box;
+  min-height: fit-content;
+}
+
+/* PROFILE SECTION */
+#profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+  height: 80vh;
+}
+
+.section__pic-container img {
+  border-radius: 50%;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border: 4px solid #fff;
+  transition: transform 0.3s ease;
+}
+
+.section__pic-container img:hover {
+  transform: scale(1.05);
+}
+
+.section__text {
+  align-self: center;
+  text-align: center;
+}
+
+.section__text__p1 {
+  color: #0078ff;
+  font-weight: 600;
+}
+
+.section__text__p2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.title {
+  font-size: 3rem;
+  background: linear-gradient(90deg, #0078ff, #00c6ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#socials-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  gap: 1.5rem;
+}
+
+.icon {
+  cursor: pointer;
+  height: 2.3rem;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.icon:hover {
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 8px #00b4ff);
+}
+
+/* BUTTONS */
+.btn {
+  font-weight: 600;
+  padding: 1rem;
+  width: 8rem;
+  border-radius: 2rem;
+  border: 2px solid #0078ff;
+  transition: all 0.3s ease;
+}
+
+.btn-color-1 {
+  background: #0078ff;
+  color: #fff;
+}
+
+.btn-color-1:hover {
+  background: #005fcc;
+}
+
+.btn-color-2 {
+  background: transparent;
+  color: #0078ff;
+}
+
+.btn-color-2:hover {
+  background: #0078ff;
+  color: #fff;
+}
+
+/* ABOUT SECTION */
+#about {
+  position: relative;
+}
+
+.about-containers {
+  display: flex;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.details-container {
+  padding: 1.5rem;
+  flex: 1;
+  background: #fff;
+  border-radius: 1.5rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.details-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.arrow {
+  position: absolute;
+  right: -5rem;
+  bottom: 2.5rem;
+  filter: drop-shadow(0 0 5px #0078ff);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.arrow:hover {
+  transform: translateY(5px);
+}
+
+/* EXPERIENCE SECTION */
+.experience-sub-title {
+  color: #0078ff;
+  font-weight: 600;
+  font-size: 1.75rem;
+  margin-bottom: 2rem;
+}
+
+/* --- Restore vertical skill list with icon on left + text on right --- */
+.article-container {
+  display: flex;
+  flex-direction: column;   /* stack items vertically (one item per row) */
+  gap: 1.25rem;             /* space between list items */
+  align-items: stretch;
+  padding: 0.5rem 0;
+}
+
+article {
+  display: flex;
+  align-items: flex-start;  /* align icon and text to the top for multi-line text */
+  gap: 0.9rem;              /* space between icon and text */
+  width: 100%;              /* take full width of the details card */
+  min-height: 3rem;
+  padding: 0.25rem 0;
+}
+
+article .icon {
+  height: 2.1rem;
+  width: 2.1rem;
+  flex: 0 0 2.1rem;         /* keep icon fixed size */
+  margin-top: 0.15rem;      /* small top offset so icon lines up with headings */
+}
+
+article h3 {
+  font-size: 1.05rem;
+  margin: 0;
+  font-weight: 600;
+  color: #222;
+}
+
+article p {
+  margin: 0.25rem 0 0 0;
+  color: #666;
+  font-size: 0.95rem;
+}
+
+/* --- Project Section Styling --- */
+#projects .details-container {
+  background: linear-gradient(135deg, #f9f9fb, #eef2ff);
+  border-radius: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: 1.5rem;
+  transition: all 0.4s ease;
+  animation: fadeInUp 0.8s ease forwards;
+  opacity: 0;
+  transform: translateY(25px);
+}
+
+#projects .details-container:hover {
+  transform: translateY(-6px);
+  background: linear-gradient(135deg, #ffffff, #e3ebff);
+  box-shadow: 0 6px 15px rgba(0, 128, 255, 0.2);
+}
+
+#projects .article-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#projects article {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9rem;
+}
+
+#projects article h3 {
+  margin: 0;
+  font-size: 1.05rem;
+  color: #1a1a1a;
+}
+
+#projects article p {
+  margin: 0.3rem 0 0;
+  color: #555;
+  font-size: 0.93rem;
+  line-height: 1.4rem;
+}
+
+/* Reuse fadeIn animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* ensure the details container has enough horizontal padding */
+.details-container .article-container {
+  padding-left: 0.6rem;
+  padding-right: 0.6rem;
+}
+
+
+/* CONTACT */
+#contact {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 70vh;
+}
+
+.contact-info-upper-container {
+  display: flex;
+  justify-content: center;
+  border-radius: 1.5rem;
+  background: #fff;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+  margin: 2rem auto;
+  padding: 1.5rem 2rem;
+  gap: 2rem;
+}
+
+.contact-info-container a {
+  color: #0078ff;
+  font-weight: 500;
+}
+
+.contact-info-container a:hover {
+  text-decoration: underline;
+}
+
+/* FOOTER */
+footer {
+  background: #f0f5ff;
+  padding: 1rem;
+  box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.05);
+}
+
+footer p {
+  text-align: center;
+  color: #444;
+}
+
+.para-box {
+  width: 90%; /* adjust width as needed */
+  margin: 10px auto; /* centers the box */
+  background-color: #ffffff; /* white box */
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  line-height: 1.6;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* optional hover animation */
+.para-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+/* Full-screen centered section */
+.about-section {
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  height:60vh; /* full screen */
+  background: linear-gradient(135deg, #e3f2fd, #f9fbff);
+}
+
+/* Stylish box */
+.about-box {
+  width: 120%;
+  max-width: 800px;
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  align-items: center;
+  padding: 35px 70px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  animation: fadeIn 1.2s ease-out;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover animation */
+.about-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+/* Text styling */
+.about-box h2 {
+  font-size: 30px;
+  color: #004aad;
+  margin-bottom: 5px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.about-box p {
+  font-size: 18px;
+  color: #333;
+  line-height: 1.8;
+  letter-spacing: 0.5px;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
